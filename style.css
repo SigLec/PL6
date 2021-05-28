@@ -1,0 +1,74 @@
+@font-face {
+	font-family: 'promptregular';
+	src: url('fonts/Prompt-regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*
+{
+	font-family: 'promptregular', Arial, Verdana;
+	text-align : center;
+}
+
+.title {
+  color : rgb(23, 152, 155);
+  font-weight: bold;
+  border: 2px inset;
+  background : rgb(250,250,250);
+  margin : 0px 0px 0px 0px;
+
+}
+
+.logo
+{
+	width: 130px;
+	height: 130px;
+	margin : 10px 0px 5px 0px;
+}
+.h2{
+	margin : 0px 0px 25px 0px;
+	font-size: 1.3em;
+}
+hr
+{
+	margin : 25px 0px 20px 0px;
+}
+#content
+{
+		font-size: 0.9em;
+}
+
+: required
+{
+	background-color: rgb(247, 159, 179);
+}
+:focus
+{
+	background-color: rgb(229, 229, 229);
+}
+#addBookForm
+{
+	text-align : left;
+
+}
+.btnForm{
+	color : rgb(23, 152, 155);
+	backgroundColor : rgb(255,255,255);
+	fontSize : 1.4em;
+	font-weight: bold;
+	width : 180px;
+	height : 30px;
+}
+.field
+{
+	width: 700px;
+	height: 25px;
+	margin : 0px 10px 0px 10px;
+}
+
+.label
+{
+	margin-left: 10px;
+	font-size: 1.2em;
+}
