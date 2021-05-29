@@ -39,10 +39,6 @@ hr
 		font-size: 0.9em;
 }
 
-: required
-{
-	background-color: rgb(247, 159, 179);
-}
 :focus
 {
 	background-color: rgb(229, 229, 229);
@@ -62,7 +58,7 @@ hr
 }
 .field
 {
-	width: 700px;
+	width: 98%;
 	height: 25px;
 	margin : 0px 10px 0px 10px;
 }

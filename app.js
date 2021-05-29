@@ -36,28 +36,11 @@ $('#addBookForm').append(
 	'<button class="btnForm" id="cancel">Annuler</button><br /><br />',
 	'</form>');
 
-/*	$('#addBook').hide();
-	displaySearchForm();*/
 
 $('#cancel').click (function(){
 	$('#addBookForm').css('display', 'none');
 	$('#addBook').show();
 });
 
-
-
-/*function displaySearchForm(){
-$('#addBookForm').prepend(
-	'<form id="formSearch">',
-	'<label for="title" class="label">Titre du livre</label><br /><br />', 
-	'<input type="text" id="title" class="field" required /><br /><br />',
-	'<label for="author" class="label">Auteur</label><br /><br />', 
-	'<input type="text" id="author" class="field" required /><br /><br />',
-	'<button class="btnForm" id="search">Rechercher</button><br /><br />',
-	'<button class="btnForm" id="cancel">Annuler</button><br /><br />',
-	'</form>');
-	//'<input type="submit" id="submit" class="btnForm" value="Rechercher" /><br /><br />',
-	//'<input type="reset" id="reset" class="btnForm" value="Annuler" /><br /><br />',
-}*/
 
 });
