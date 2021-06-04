@@ -53,21 +53,21 @@ var $resultsContainer = $('#resultsContainer');
 $resultsTitle.hide();
 $resultsContainer.hide();
 
-//-----var $resultBlock = $('#resultBlock');-------------------------//
 var apiUrl = "https://www.googleapis.com/books/v1/volumes?q="
 var apiKey = "AIzaSyAdMSAMUsKSRpbMDjFuBmTjPDGTk4DRN-k"
 var resultsData;
 
 // Ecoute du bouton search
 $('#search').click(function() {
-	//$resultsContainer.html("");
-	resultsData = $('#titleInput').val();
+	$resultsContainer.html("");
+	titleInput = $('#titleInput').val();
+	authorInput = $('#authorInput').val();
 	//handling empty search input field
-	if(resultsData === "" || resultsData === null) {
+	if(titleInput === "" || authorInput === "") {
 		alert("Vous devez renseigner les champs titre et auteur avant de soumettre le formulaire");
 	} else {
 		$.ajax({
-			url: apiUrl + resultsData,
+			url: apiUrl + titleInput + "+inauthor:" +authorInput,
 			dataType: 'json',
 			success: function(response) {
 				console.log(response);
@@ -86,7 +86,8 @@ $('#search').click(function() {
 			}
 		});
 	}
-	$('#titleInput').val(""); // clean search box
+	$('#titleInput').val(""); // clean search input
+	$('#authorInput').val("");  // clean search input
 });
 
 	//Fonction to display the results in index.html
@@ -105,7 +106,7 @@ $('#search').click(function() {
 			var $imgBook = item.volumeInfo.imageLinks === undefined ?
 			"image/unavailable.png" : item.volumeInfo.imageLinks.thumbnail;
 
-	$('.container').append(
+	$resultsContainer.append(
 			"<div class='container-card'>" +
   			"<div class='card'>" +
   			"<div class='card-body'>" +
