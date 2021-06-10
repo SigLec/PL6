@@ -109,6 +109,7 @@ hr {
 }
 
 .card-title {
+	width : 95%;
 	text-align: left;
 	font-size: 1.2em;
 	font-style : bold;
@@ -135,19 +136,19 @@ hr {
   height: 200px;
 }
 
-#bookmark {
+.icon {
   position: absolute;
-  right: 15px;
-  top: 20px;
+  right: 10px;
+  top: 15px;
   width: 40px;
   height: 40px;
   border : none;
   background-color: rgb(250,250,250);
-  color: rgb(23, 152, 155);*/
+  color: rgb(23, 152, 155);
 }
 
 .fas {
-	font-size: 35px;
+	font-size: 32px;
 	color: rgb(23, 152, 155);
 }
 

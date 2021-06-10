@@ -130,8 +130,8 @@ function displayResponseInCard(result) {
     		'<h4 class="card-author" id="authorCard">'  + book.author + '</h4>' +
        	'<p class="card-id">Id :&nbsp;' + book.id  + '</p>' +
        	'<p class="card-text">Description : &nbsp;' + book.description + "&nbsp;[...]" + '</p>' + 
-				"<button id='bookmark' data-id= '" + book.id + "'><i class='fas fa-bookmark'></i></button>" +   		
-				'<img src="' + book.imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
+		'<button class="icon" id="bookmark" data-id= "' + book.id + '"><i class="fas fa-bookmark"></i></button>' +   		
+		'<img src="' + book.imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
 		'</div>' +
 		'</div>' +
 		'</div>');
@@ -142,6 +142,8 @@ function displayResponseInCard(result) {
 				bookId = $(this).data("id");
 				console.log(bookId);
 				addToFav(bookId);
+				$('#pochListContainer').empty();
+				displayPochList();
 	});
 
 			function addToFav(bookId) {
@@ -156,6 +158,33 @@ function displayResponseInCard(result) {
 			console.log(selectedBooks);
 			console.log(pochList);
 		}
+	}
+
+// Add div for pochList area
+var addFavoritesContainer = $('#content').after('<div class="container" id="pochListContainer"></div>');
+var $pochListContainer = $('#pochListContainer');
+
+	// Function to dislay books in pochList
+	function displayPochList() {
+	for (var i = 0; i < pochList.length; i++) {
+		$pochListContainer.append(
+		'<div class="container-card">'+
+  		'<div class="card">' +
+  		'<div class="card-body">' +
+    		'<h5 class="card-title" id="titleCard">Titre :&nbsp;' + pochList[i].title + '</h3>' +
+    		'<h4 class="card-author" id="authorCard">'  + pochList[i].author + '</h4>' +
+       	'<p class="card-id">Id :&nbsp;' + pochList[i].id  + '</p>' +
+       	'<p class="card-text">Description : &nbsp;' + pochList[i].description + "&nbsp;[...]" + '</p>' + 
+       	'<button class="icon" id="trash" data-trash= "' + pochList[i].id + '"><i class="fas fa-trash-alt"></i></button>' +   		
+   		'<img src="' + pochList[i].imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
+		'</div>' +
+		'</div>' +
+		'</div>');
+	}
+
+
+
+
 	}
 
 });
