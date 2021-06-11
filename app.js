@@ -130,39 +130,40 @@ function displayResponseInCard(result) {
     		'<h4 class="card-author" id="authorCard">'  + book.author + '</h4>' +
        	'<p class="card-id">Id :&nbsp;' + book.id  + '</p>' +
        	'<p class="card-text">Description : &nbsp;' + book.description + "&nbsp;[...]" + '</p>' + 
-		'<button class="icon" id="bookmark" data-id= "' + book.id + '"><i class="fas fa-bookmark"></i></button>' +   		
+		'<button class="icon" id="bookmark" data-id= "' + book.id + '"><i class="fas fa-bookmark" title="Ajouter à la poch\'List"></i></button>' +   		
 		'<img src="' + book.imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
 		'</div>' +
 		'</div>' +
 		'</div>');
 	}
 }
-
+	// Event listener on bookmark button
 	$("body").on("click", "#bookmark", function() {
-				bookId = $(this).data("id");
+				var bookId = $(this).data("id");
 				console.log(bookId);
-				addToFav(bookId);
-				$('#pochListContainer').empty();
+				addToFavorites(bookId);
+				$pochListContainer.empty();
 				displayPochList();
+				$pochListContainer.show();
 	});
 
-			function addToFav(bookId) {
-			var book = booksSortedById[bookId];
-			if(selectedBooks.has(bookId)) {
-			console.log('Vous ne pouvez ajouter deux fois le même livre');
-			} else {
-			selectedBooks.add(bookId);
-			pochList.push(book);
-			console.log('Votre livre a bien été ajouté à votre poch\'List!');
-			sessionStorage.setItem('selectedBooks', JSON.stringify(pochList));
-			console.log(selectedBooks);
-			console.log(pochList);
+		function addToFavorites(bookId) {
+		var book = booksSortedById[bookId];
+		if(selectedBooks.has(bookId)) {
+		console.log('Vous ne pouvez ajouter deux fois le même livre');
+		} else {
+		selectedBooks.add(bookId);
+		pochList.push(book);
+		console.log('Votre livre a bien été ajouté à votre poch\'List!');
+		sessionStorage.setItem('selectedBooks', JSON.stringify(pochList));
+		console.log(selectedBooks);
+		console.log(pochList);
+			}
 		}
-	}
 
-// Add div for pochList area
-var addFavoritesContainer = $('#content').after('<div class="container" id="pochListContainer"></div>');
-var $pochListContainer = $('#pochListContainer');
+	// Add div for pochList area
+	var addFavoritesContainer = $('#content').after('<div class="container" id="pochListContainer"></div>');
+	var $pochListContainer = $('#pochListContainer');
 
 	// Function to dislay books in pochList
 	function displayPochList() {
@@ -175,16 +176,41 @@ var $pochListContainer = $('#pochListContainer');
     		'<h4 class="card-author" id="authorCard">'  + pochList[i].author + '</h4>' +
        	'<p class="card-id">Id :&nbsp;' + pochList[i].id  + '</p>' +
        	'<p class="card-text">Description : &nbsp;' + pochList[i].description + "&nbsp;[...]" + '</p>' + 
-       	'<button class="icon" id="trash" data-trash= "' + pochList[i].id + '"><i class="fas fa-trash-alt"></i></button>' +   		
+       	'<button class="icon" id="trash" data-trash= "' + pochList[i].id + '"><i class="fas fa-trash-alt" title="Supprimer de la poch\'List"></i></button>' +   		
    		'<img src="' + pochList[i].imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
 		'</div>' +
 		'</div>' +
 		'</div>');
+		}
 	}
 
+	//PochList container hidden by default
+	$pochListContainer.hide();
 
+	// Event listener on trash button
+	$("body").on("click", "#trash", function() {
+				var bookId = $(this).data("trash");
+				var book = booksSortedById[bookId];
+				console.log(bookId);
+				removeFromFavorites(bookId);
+				$pochListContainer.empty();
+				displayPochList();			
+	});
 
-
+	// Event listener on trash button
+	function removeFromFavorites(bookId) {
+		var book = booksSortedById[bookId];
+		selectedBooks.delete(bookId);
+		console.log(selectedBooks);
+		console.log(pochList);
+		// Find the index of the book we want to delete
+		var deletedBookIndex = pochList.indexOf(book);
+		console.log(deletedBookIndex);
+		var removedBook = pochList.splice(deletedBookIndex, 1);
+		sessionStorage.setItem('selectedBooks', JSON.stringify(pochList));
+		console.log('Votre livre a bien été retiré votre poch\'List!');
+		console.log(pochList);
+		console.log(selectedBooks);
 	}
 
 });

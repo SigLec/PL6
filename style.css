@@ -33,8 +33,8 @@ hr {
 	margin : 25px 0px 20px 0px;
 }
 
-#content {
-	font-size: 0.9em;
+#content h2 {
+	font-size: 1.4em;
 }
 
 :focus {
@@ -47,8 +47,12 @@ hr {
 	border-color: black;
 	font-size : 1.2em;
 	font-weight: bold;
-	width : 200px;
-	height : 35px;
+	width : auto;
+	height : auto;
+}
+
+#addBook:hover {
+  box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
 }
 
 #searchForm {
@@ -64,6 +68,10 @@ hr {
 	width : 140px;
 	height : 30px;
 	margin-left: 10px;
+}
+
+.btnForm:hover {
+  box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
 }
 
 .field {
@@ -87,16 +95,16 @@ hr {
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
-	border : 2px ridge;
-	border-color : rgb(250, 250, 250);
+	/*border : 2px ridge;
+	border-color : rgb(250, 250, 250);*/
 }
 
 .container-card {
   width: 400px;
   margin: 10px;
-  border: 1px inset;
+  /*border: 0.8px inset;
   border-color: rgb(23, 152, 155);
-  background-color: rgb(250,250,250);
+  background-color: rgb(250,250,250);*/
 }
 
 .container-card:hover {
@@ -109,7 +117,7 @@ hr {
 }
 
 .card-title {
-	width : 95%;
+	width : 92%;
 	text-align: left;
 	font-size: 1.2em;
 	font-style : bold;
