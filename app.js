@@ -1,15 +1,16 @@
 $(document).ready(function(){
 
-var book, title, author, id, description, imgBook;
+var book, title, author, id, description, imgBook, bookId;
 var booksSortedById = new Set();
 var selectedBooks = new Set();
 var pochList = [];
+var $pochListContainer = $('#pochListContainer');
 
 
 // Add button "Ajouter un livre" 
 var addButton = $('.h2').after('<button class="btn" id="addBook">Ajouter un livre</button>');
-var $addBook = $('#addBook');
-	
+var $addBook = $('#addBook');	
+
 // Add div "searchForm" 
 var addSearchForm = $('.h2').after('<div id="searchForm"></div>');
 var $searchForm = $('#searchForm');
@@ -43,6 +44,7 @@ $('#cancel').click (function(){
 	$resultsTitle.hide();
 	$resultsContainer.hide();
 	$field.val("");
+	$pochListContainer.show();
 });
 
 // Add div for title of the search results area
@@ -139,12 +141,12 @@ function displayResponseInCard(result) {
 }
 	// Event listener on bookmark button
 	$("body").on("click", "#bookmark", function() {
-				var bookId = $(this).data("id");
-				console.log(bookId);
-				addToFavorites(bookId);
-				$pochListContainer.empty();
-				displayPochList();
-				$pochListContainer.show();
+			var bookId = $(this).data("id");
+			console.log(bookId);
+			addToFavorites(bookId);
+			$pochListContainer.empty();
+			displayPochList();
+			$pochListContainer.show();
 	});
 
 		function addToFavorites(bookId) {
@@ -158,8 +160,8 @@ function displayResponseInCard(result) {
 		sessionStorage.setItem('selectedBooks', JSON.stringify(pochList));
 		console.log(selectedBooks);
 		console.log(pochList);
-			}
 		}
+	}
 
 	// Add div for pochList area
 	var addFavoritesContainer = $('#content').after('<div class="container" id="pochListContainer"></div>');
@@ -185,7 +187,7 @@ function displayResponseInCard(result) {
 	}
 
 	//PochList container hidden by default
-	$pochListContainer.hide();
+	//$pochListContainer.hide();
 
 	// Event listener on trash button
 	$("body").on("click", "#trash", function() {
@@ -212,5 +214,11 @@ function displayResponseInCard(result) {
 		console.log(pochList);
 		console.log(selectedBooks);
 	}
+
+if(sessionStorage.getItem('selectedBooks')) {
+	console.log('Ok getItem');
+	pochList = JSON.parse(sessionStorage.getItem('selectedBooks'));
+	displayPochList();
+}
 
 });
