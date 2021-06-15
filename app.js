@@ -8,11 +8,11 @@ var $pochListContainer = $('#pochListContainer');
 
 
 // Add button "Ajouter un livre" 
-var addButton = $('.h2').after('<button class="btn" id="addBook">Ajouter un livre</button>');
+var addButton = $('.h2').after('<button class="btnAdd" id="addBook">Ajouter un livre</button>');
 var $addBook = $('#addBook');	
 
 // Add div "searchForm" 
-var addSearchForm = $('.h2').after('<div id="searchForm"></div>');
+var addSearchForm = $('.h2').after('<div class="formBlock" id="searchForm"></div>');
 var $searchForm = $('#searchForm');
 
 // Add form in div "searchForm"
@@ -186,9 +186,6 @@ function displayResponseInCard(result) {
 		}
 	}
 
-	//PochList container hidden by default
-	//$pochListContainer.hide();
-
 	// Event listener on trash button
 	$("body").on("click", "#trash", function() {
 				var bookId = $(this).data("trash");
@@ -218,6 +215,7 @@ function displayResponseInCard(result) {
 if(sessionStorage.getItem('selectedBooks')) {
 	console.log('Ok getItem');
 	pochList = JSON.parse(sessionStorage.getItem('selectedBooks'));
+	$pochListContainer.empty();
 	displayPochList();
 }
 
