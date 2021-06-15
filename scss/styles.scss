@@ -1,0 +1,178 @@
+
+$light_grey : rgb(250,250,250);
+$blue_as_logo : rgb(23, 152, 155);
+
+@mixin hover_shadow {
+	box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
+  transform: scale(1.05);
+}
+
+
+@font-face {
+	font-family: 'promptregular';
+	src: url('fonts/Prompt-regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	text-align : center;
+  font-family: 'promptregular', Arial, Verdana;;
+}
+
+.title {
+  color : $blue_as_logo;
+  font-weight: bold;
+  border: 2px inset;
+  background : $light_grey;
+}
+
+.imglogo {
+	width: 200px;
+	height: auto;
+	margin : 10px 0px 5px 0px;
+}
+
+.h2 {
+	margin : 0px 0px 25px 0px;
+	font-size: 1.3em;
+}
+
+hr {
+	margin : 25px 0px 20px 0px;
+}
+
+.btnAdd {
+	color : $blue_as_logo;
+	background-color : $light_grey;
+	border-color: black;
+	font-size : 1.2em;
+	font-weight: bold;
+	width : auto;
+	height : auto;
+		&:hover{
+		@include hover_shadow;
+  	}
+}
+
+.formBlock {
+	text-align : left;
+	border: 2px inset;
+	background-color : $light_grey;
+	margin-bottom : 20px;
+		& .label {
+		margin-left: 10px;
+		font-size: 1.2em;
+		}
+		& .field {
+		width: 95%;
+		height: 30px;
+		margin : 0.7em;
+		text-align : left;
+			&:focus {
+			background-color: rgb(230,239,239);
+      }
+		}
+	}
+
+.btnForm {
+	color : $blue_as_logo;
+	background-color : rgb(255,255,255);
+	font-size : 1em;
+	width : 200px;
+	height : auto;
+	margin-left: 10px;
+	margin-right: 10px;
+		&:hover {
+		@include hover_shadow;
+  	}
+}
+
+#content h2 {
+	margin-top : 25px;
+	font-size : 1.3em;
+}
+
+.container {
+  display : inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.container-card {
+  margin: 10px;
+  width: 90%;
+	justify-content: space-evenly;
+  	&:hover {
+		@include hover_shadow;
+  	}
+	  	& .card-body {
+			height: auto;
+	  	background-color: $light_grey;
+	  	text-align : center;
+			}
+			& .card-title {	
+			width : 90%;
+			font-size: 1.2em;
+			font-style : bold;
+			text-align : left;
+			margin-top : 7px;
+			margin-bottom : 15px;
+			}
+			& .card-author {
+			font-size: 1em;
+			font-style : bold;
+			text-align : justify;
+			margin-bottom : 15px;
+			}
+			& .card-id {
+			font-style : italic;
+			text-align : justify;
+			margin-bottom : 20px;
+			}
+			& .card p {
+			font-size: 0.9em;
+			text-align : justify;
+			margin-bottom : 15px;
+			}
+			& .card img {
+			width: 150px;
+			height: 200px;
+			margin-bottom : auto;
+			}
+
+			& .icon {
+		  position: absolute;
+		  right: 10px;
+		  top: 15px;
+		  width: 40px;
+		  height: 40px;
+		  border : none;
+		  background-color: $light_grey;
+		  color: $blue_as_logo;
+		  	&:hover{
+					transform: scale(1.5);
+		 		}
+			.fas {
+			font-size: 32px;
+			color: $blue_as_logo;
+			}
+		}
+	}
+
+	@media screen and (min-width: 665px) {
+
+	.container-card {
+  	margin: 10px;
+ 		width: 30%;
+ 	}
+
+ 	.formBlock {
+ 		width : 50%;
+ 		margin : auto;
+ 		margin-bottom : 20px;
+  }
+}
+
+

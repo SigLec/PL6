@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "promptregular";
+  src: url("fonts/Prompt-regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  text-align: center;
+  font-family: "promptregular", Arial, Verdana;
+}
+
+.title {
+  color: #17989b;
+  font-weight: bold;
+  border: 2px inset;
+  background: #fafafa;
+}
+
+.imglogo {
+  width: 200px;
+  height: auto;
+  margin: 10px 0px 5px 0px;
+}
+
+.h2 {
+  margin: 0px 0px 25px 0px;
+  font-size: 1.3em;
+}
+
+hr {
+  margin: 25px 0px 20px 0px;
+}
+
+.btnAdd {
+  color: #17989b;
+  background-color: #fafafa;
+  border-color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: auto;
+  height: auto;
+}
+.btnAdd:hover {
+  box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
+  transform: scale(1.05);
+}
+
+.formBlock {
+  text-align: left;
+  border: 2px inset;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+}
+.formBlock .label {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+.formBlock .field {
+  width: 95%;
+  height: 30px;
+  margin: 0.7em;
+  text-align: left;
+}
+.formBlock .field:focus {
+  background-color: #e6efef;
+}
+
+.btnForm {
+  color: #17989b;
+  background-color: white;
+  font-size: 1em;
+  width: 200px;
+  height: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.btnForm:hover {
+  box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
+  transform: scale(1.05);
+}
+
+#content h2 {
+  margin-top: 25px;
+  font-size: 1.3em;
+}
+
+.container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.container-card {
+  margin: 10px;
+  width: 90%;
+  justify-content: space-evenly;
+}
+.container-card:hover {
+  box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
+  transform: scale(1.05);
+}
+.container-card .card-body {
+  height: auto;
+  background-color: #fafafa;
+  text-align: center;
+}
+.container-card .card-title {
+  width: 90%;
+  font-size: 1.2em;
+  font-style: bold;
+  text-align: left;
+  margin-top: 7px;
+  margin-bottom: 15px;
+}
+.container-card .card-author {
+  font-size: 1em;
+  font-style: bold;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+.container-card .card-id {
+  font-style: italic;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.container-card .card p {
+  font-size: 0.9em;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+.container-card .card img {
+  width: 150px;
+  height: 200px;
+  margin-bottom: auto;
+}
+.container-card .icon {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #fafafa;
+  color: #17989b;
+}
+.container-card .icon:hover {
+  transform: scale(1.5);
+}
+.container-card .icon .fas {
+  font-size: 32px;
+  color: #17989b;
+}
+
+@media screen and (min-width: 665px) {
+  .container-card {
+    margin: 10px;
+    width: 30%;
+  }
+
+  .formBlock {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
