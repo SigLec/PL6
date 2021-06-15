@@ -88,6 +88,12 @@ hr {
   	}
 }
 
+.alert {
+  	width : 98%;
+  	margin : auto;
+ 		margin-bottom : 5px;
+  }
+
 #content h2 {
 	margin-top : 25px;
 	font-size : 1.3em;
@@ -161,17 +167,40 @@ hr {
 		}
 	}
 
-	@media screen and (min-width: 665px) {
+	@media screen and (min-width: 765px) and (max-width: 1024px) {
+	.container-card {
+  	margin: 10px;
+ 		width: 45%;
+ 		}
+ 		.card-title {	
+			width : 80%;
+		}
+ 		.formBlock {
+ 		width : 70%;
+ 		margin : auto;
+ 		margin-bottom : 10px;
+  }
+  .fas {
+			font-size: 25px;
+			color: $blue_as_logo;
+	}
+}
 
+	@media screen and (min-width: 1024px) {
 	.container-card {
   	margin: 10px;
  		width: 30%;
  	}
 
+ 	.card-title {	
+			min-height: 1em;
+			font-size: 1.5em;			
+			}
+
  	.formBlock {
  		width : 50%;
  		margin : auto;
- 		margin-bottom : 20px;
+ 		margin-bottom : 10px;
   }
 }
 

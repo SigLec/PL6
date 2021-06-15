@@ -54,6 +54,7 @@ $searchForm.after(
 	"</div>");
 var $resultsTitle = $('#resultsTitle');
 // Add div for search results area
+
 $resultsTitle.after(
 	"<div class='container' id='resultsContainer'></div>");
 var $resultsContainer = $('#resultsContainer');
@@ -62,7 +63,6 @@ $resultsTitle.hide();
 $resultsContainer.hide();
 
 var apiUrl = "https://www.googleapis.com/books/v1/volumes?q="
-var apiKey = "AIzaSyAdMSAMUsKSRpbMDjFuBmTjPDGTk4DRN-k"
 
 // Event listener on search button
 $('#search').click(function() {
@@ -77,7 +77,7 @@ $('#search').click(function() {
 	//handling empty search input field
 	if(titleInput === "" || authorInput === "") {
 		alert("Vous devez renseigner les champs titre et auteur avant de soumettre le formulaire");
-	} else {
+			} else {
 		$.ajax({
 			url: apiUrl + "+intitle:" + titleInput + "+inauthor:" + authorInput,
 			dataType: 'json',
@@ -142,17 +142,16 @@ function displayResponseInCard(result) {
 	// Event listener on bookmark button
 	$("body").on("click", "#bookmark", function() {
 			var bookId = $(this).data("id");
-			console.log(bookId);
 			addToFavorites(bookId);
 			$pochListContainer.empty();
 			displayPochList();
 			$pochListContainer.show();
 	});
 
-		function addToFavorites(bookId) {
+	function addToFavorites(bookId) {
 		var book = booksSortedById[bookId];
 		if(selectedBooks.has(bookId)) {
-		console.log('Vous ne pouvez ajouter deux fois le même livre');
+		alert("Vous ne pouvez ajouter deux fois le même livre");
 		} else {
 		selectedBooks.add(bookId);
 		pochList.push(book);
@@ -188,12 +187,12 @@ function displayResponseInCard(result) {
 
 	// Event listener on trash button
 	$("body").on("click", "#trash", function() {
-				var bookId = $(this).data("trash");
-				var book = booksSortedById[bookId];
-				console.log(bookId);
-				removeFromFavorites(bookId);
-				$pochListContainer.empty();
-				displayPochList();			
+		var bookId = $(this).data("trash");
+		var book = booksSortedById[bookId];
+		console.log(bookId);
+		removeFromFavorites(bookId);
+		$pochListContainer.empty();
+		displayPochList();			
 	});
 
 	// Event listener on trash button
@@ -207,16 +206,14 @@ function displayResponseInCard(result) {
 		console.log(deletedBookIndex);
 		var removedBook = pochList.splice(deletedBookIndex, 1);
 		sessionStorage.setItem('selectedBooks', JSON.stringify(pochList));
-		console.log('Votre livre a bien été retiré votre poch\'List!');
 		console.log(pochList);
 		console.log(selectedBooks);
 	}
 
-if(sessionStorage.getItem('selectedBooks')) {
-	console.log('Ok getItem');
-	pochList = JSON.parse(sessionStorage.getItem('selectedBooks'));
-	$pochListContainer.empty();
-	displayPochList();
+	if(sessionStorage.getItem('selectedBooks')) {
+		pochList = JSON.parse(sessionStorage.getItem('selectedBooks'));
+		$pochListContainer.empty();
+		displayPochList();
 }
 
 });
