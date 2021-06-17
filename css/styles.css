@@ -1,12 +1,6 @@
-@font-face {
-  font-family: "promptregular";
-  src: url("fonts/Prompt-regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
 * {
   text-align: center;
-  font-family: "promptregular", Arial, Verdana;
+  font-family: "Vollkorn", serif;
 }
 
 .title {
@@ -14,6 +8,10 @@
   font-weight: bold;
   border: 2px inset;
   background: #fafafa;
+  margin: 35px 20px 0px 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
 }
 
 .imglogo {
@@ -28,7 +26,8 @@
 }
 
 hr {
-  margin: 25px 0px 20px 0px;
+  margin: 25px 15px 20px 15px;
+  height: 2px;
 }
 
 .btnAdd {
@@ -43,6 +42,11 @@ hr {
 .btnAdd:hover {
   box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
   transform: scale(1.05);
+}
+@media screen and (min-width: 1024px) {
+  .btnAdd {
+    font-size: 1.7em;
+  }
 }
 
 .formBlock {
@@ -79,12 +83,6 @@ hr {
   transform: scale(1.05);
 }
 
-.alert {
-  width: 98%;
-  margin: auto;
-  margin-bottom: 5px;
-}
-
 #content h2 {
   margin-top: 25px;
   font-size: 1.3em;
@@ -97,6 +95,10 @@ hr {
   justify-content: space-around;
 }
 
+.card {
+  background-color: #fafafa;
+}
+
 .container-card {
   margin: 10px;
   width: 90%;
@@ -107,11 +109,12 @@ hr {
   transform: scale(1.05);
 }
 .container-card .card-body {
-  height: auto;
-  background-color: #fafafa;
+  margin: 10px;
+  width: 90%;
   text-align: center;
 }
 .container-card .card-title {
+  min-height: 0px;
   width: 90%;
   font-size: 1.2em;
   font-style: bold;
@@ -136,9 +139,8 @@ hr {
   margin-bottom: 15px;
 }
 .container-card .card img {
-  width: 150px;
-  height: 200px;
-  margin-bottom: auto;
+  width: 140px;
+  height: 180px;
 }
 .container-card .icon {
   position: absolute;
@@ -158,24 +160,25 @@ hr {
   color: #17989b;
 }
 
-@media screen and (min-width: 765px) and (max-width: 1024px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   .container-card {
-    margin: 10px;
     width: 45%;
   }
-
-  .card-title {
-    width: 80%;
+  .container-card .card-title {
+    width: 90%;
   }
-
-  .formBlock {
-    width: 70%;
-    margin: auto;
-    margin-bottom: 10px;
+  .container-card .card img {
+    width: 120px;
+    height: 160px;
+    margin-bottom: auto;
   }
-
-  .fas {
-    font-size: 25px;
+  .container-card .icon {
+    position: absolute;
+    right: 7px;
+    top: 9px;
+  }
+  .container-card .fas {
+    font-size: 15px;
     color: #17989b;
   }
 }
@@ -187,13 +190,30 @@ hr {
 
   .card-title {
     min-height: 1em;
-    font-size: 1.5em;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 2rem;
   }
 
   .formBlock {
     width: 50%;
     margin: auto;
     margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 3em;
+  }
+
+  .h2 {
+    font-size: 2em;
+  }
+
+  #content h2 {
+    margin-top: 25px;
+    font-size: 2em;
   }
 }
 

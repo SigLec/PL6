@@ -7,17 +7,9 @@ $blue_as_logo : rgb(23, 152, 155);
   transform: scale(1.05);
 }
 
-
-@font-face {
-	font-family: 'promptregular';
-	src: url('fonts/Prompt-regular.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-
 * {
 	text-align : center;
-  font-family: 'promptregular', Arial, Verdana;;
+	font-family: 'Vollkorn', serif;
 }
 
 .title {
@@ -25,6 +17,11 @@ $blue_as_logo : rgb(23, 152, 155);
   font-weight: bold;
   border: 2px inset;
   background : $light_grey;
+  margin : 35px 20px 0px 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items : center;
+  
 }
 
 .imglogo {
@@ -39,7 +36,8 @@ $blue_as_logo : rgb(23, 152, 155);
 }
 
 hr {
-	margin : 25px 0px 20px 0px;
+	margin : 25px 15px 20px 15px;
+	height:2px;
 }
 
 .btnAdd {
@@ -53,6 +51,9 @@ hr {
 		&:hover{
 		@include hover_shadow;
   	}
+	@media screen and (min-width: 1024px) {
+		font-size : 1.7em;
+	}
 }
 
 .formBlock {
@@ -71,7 +72,7 @@ hr {
 		text-align : left;
 			&:focus {
 			background-color: rgb(230,239,239);
-      }
+      		}
 		}
 	}
 
@@ -85,14 +86,8 @@ hr {
 	margin-right: 10px;
 		&:hover {
 		@include hover_shadow;
-  	}
-}
-
-.alert {
-  	width : 98%;
-  	margin : auto;
- 		margin-bottom : 5px;
-  }
+  		}
+	}
 
 #content h2 {
 	margin-top : 25px;
@@ -105,20 +100,25 @@ hr {
   width: 100%;
   justify-content: space-around;
 }
+.card {
+	background-color: $light_grey;
+}
 
 .container-card {
-  margin: 10px;
-  width: 90%;
+	margin: 10px;
+  	width: 90%;
 	justify-content: space-evenly;
+
   	&:hover {
 		@include hover_shadow;
   	}
-	  	& .card-body {
-			height: auto;
-	  	background-color: $light_grey;
-	  	text-align : center;
+			& .card-body {
+			margin: 10px;
+			width: 90%;
+	  		text-align : center;
 			}
 			& .card-title {	
+			min-height: 0px;
 			width : 90%;
 			font-size: 1.2em;
 			font-style : bold;
@@ -143,65 +143,82 @@ hr {
 			margin-bottom : 15px;
 			}
 			& .card img {
-			width: 150px;
-			height: 200px;
-			margin-bottom : auto;
+			width: 140px;
+			height: 180px;
 			}
 
 			& .icon {
-		  position: absolute;
-		  right: 10px;
-		  top: 15px;
-		  width: 40px;
-		  height: 40px;
-		  border : none;
-		  background-color: $light_grey;
-		  color: $blue_as_logo;
-		  	&:hover{
-					transform: scale(1.5);
-		 		}
-			.fas {
+			position: absolute;
+			right: 10px;
+			top: 15px;
+			width: 40px;
+			height: 40px;
+			border : none;
+			background-color: $light_grey;
+			color: $blue_as_logo;
+				&:hover{
+						transform: scale(1.5);
+					}
+			& .fas {
 			font-size: 32px;
 			color: $blue_as_logo;
 			}
 		}
 	}
 
-	@media screen and (min-width: 765px) and (max-width: 1024px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
 	.container-card {
-  	margin: 10px;
- 		width: 45%;
- 		}
- 		.card-title {	
-			width : 80%;
-		}
- 		.formBlock {
- 		width : 70%;
- 		margin : auto;
- 		margin-bottom : 10px;
-  }
-  .fas {
-			font-size: 25px;
-			color: $blue_as_logo;
+ 	width: 45%;
+		
+	& .card-title {	
+	width : 90%;
+	}			 
+	& .card img {
+	width: 120px;
+	height: 160px;
+	margin-bottom : auto;
 	}
+	& .icon {
+		position: absolute;
+		right: 7px;
+		top: 9px;
+	}
+	& .fas {
+		font-size: 15px;
+		color: $blue_as_logo;
+	} 
+	}		
 }
 
-	@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
+
 	.container-card {
   	margin: 10px;
- 		width: 30%;
+ 	width: 30%;
  	}
-
  	.card-title {	
-			min-height: 1em;
-			font-size: 1.5em;			
-			}
-
+		min-height: 1em;
+		font-size: 16px;			
+		}
+	.title {
+    font-size: 2rem;
+  }
  	.formBlock {
  		width : 50%;
  		margin : auto;
  		margin-bottom : 10px;
   }
+  .title {
+    	font-size: 3em;
+  }
+  .h2 {
+		font-size: 2em;
+	}
+#content h2 {
+	margin-top : 25px;
+	font-size : 2em;
+	}
+
 }
 
 
