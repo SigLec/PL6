@@ -62,13 +62,11 @@ var $resultsContainer = $('#resultsContainer');
 $resultsTitle.hide();
 $resultsContainer.hide();
 
-var apiUrl = "https://www.googleapis.com/books/v1/volumes?q="
-
 // Event listener on search button
 $('#search').click(function() {
 	apiCall();
 });
-
+var apiUrl = "https://www.googleapis.com/books/v1/volumes?q="
 //Send the request to google API
 	function apiCall() {
 	$resultsContainer.html("");
@@ -108,7 +106,7 @@ function displayResponse(response) {
 		var item = response.items[i];
 		var book = {
 			"title": item.volumeInfo.title,
-			"author" : item.volumeInfo.authors[0],
+			"author" : item.volumeInfo.authors ? item.volumeInfo.authors[0] : "information manquante",
 			"id": item.id,
 			"description": item.volumeInfo.description ? item.volumeInfo.description.substr(0, 199) : "information manquante",
 			"imgBook" : item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail :
@@ -126,7 +124,7 @@ function displayResponseInCard(result) {
     var book = result[i];
 	$resultsContainer.append(
 		'<div class="container-card">'+
-  		'<div class="card">' +
+  		'<div class="card h-100">' +
   		'<div class="card-body">' +
     		'<h5 class="card-title" id="titleCard">Titre :&nbsp;' + book.title + '</h3>' +
     		'<h4 class="card-author" id="authorCard">'  + book.author + '</h4>' +
@@ -171,7 +169,7 @@ function displayResponseInCard(result) {
 	for (var i = 0; i < pochList.length; i++) {
 		$pochListContainer.append(
 		'<div class="container-card">'+
-  		'<div class="card">' +
+  		'<div class="card h-100">' +
   		'<div class="card-body">' +
     		'<h5 class="card-title" id="titleCard">Titre :&nbsp;' + pochList[i].title + '</h3>' +
     		'<h4 class="card-author" id="authorCard">'  + pochList[i].author + '</h4>' +
