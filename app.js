@@ -105,7 +105,7 @@ function displayResponse(response) {
 	for (var i = 0; i < response.items.length; i++) {
 		var item = response.items[i];
 		var book = {
-			"title": item.volumeInfo.title,
+			"title": item.volumeInfo.title ? item.volumeInfo.title.substr(0, 45) : "information manquante",
 			"author" : item.volumeInfo.authors ? item.volumeInfo.authors[0] : "information manquante",
 			"id": item.id,
 			"description": item.volumeInfo.description ? item.volumeInfo.description.substr(0, 199) : "information manquante",
@@ -125,13 +125,19 @@ function displayResponseInCard(result) {
 	$resultsContainer.append(
 		'<div class="container-card">'+
   		'<div class="card h-100">' +
-  		'<div class="card-body">' +
-    		'<h5 class="card-title" id="titleCard">Titre :&nbsp;' + book.title + '</h3>' +
-    		'<h4 class="card-author" id="authorCard">'  + book.author + '</h4>' +
+  		'<div class="card-body text-left">' +
+		'<div class="first">' +
+		'<h5 class="card-title" id="titleCard">Titre :&nbsp;' + book.title + '</h3>' +
+    	'<h4 class="card-author" id="authorCard">'  + book.author + '</h4>' +
        	'<p class="card-id">Id :&nbsp;' + book.id  + '</p>' +
+		'</div>' +
+		'<div class="second">' +
        	'<p class="card-text">Description : &nbsp;' + book.description + "&nbsp;[...]" + '</p>' + 
+		'</div>' +
 		'<button class="icon" id="bookmark" data-id= "' + book.id + '"><i class="fas fa-bookmark" title="Ajouter à la poch\'List"></i></button>' +   		
+		'<div class="third">' +
 		'<img src="' + book.imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
+		'</div>' +
 		'</div>' +
 		'</div>' +
 		'</div>');
