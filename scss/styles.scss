@@ -6,16 +6,16 @@ $blue_as_logo : rgb(23, 152, 155);
 box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
 transform: scale(1.05);
 }
+@mixin text_card {
+	text-align: justify;
+}
 
 * {
 	text-align : center;
 	font-family: 'Vollkorn', serif;
 	font-size: 16px ;
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
+	@media screen and (min-width: 665px) and (max-width: 1024px) {
 		font-size : 17px;
-	}
-	@media screen and (min-width: 1024px) {
-		font-size : 18px;
 	}
 }
 
@@ -27,7 +27,7 @@ transform: scale(1.05);
   padding: 10px 0px 10px 0px;
   align-items : center;
   font-size : 34px;
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
+	@media screen and (min-width: 665px) and (max-width: 1024px) {
 		font-size : 36px;
 	}
 	@media screen and (min-width: 1024px) {
@@ -44,7 +44,7 @@ transform: scale(1.05);
 .h2 {
 	margin : 0px 0px 25px 0px;
 	font-size: 22px;
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
+	@media screen and (min-width: 665px) and (max-width: 1024px) {
 		font-size : 24px;
 	}
 	@media screen and (min-width: 1024px) {
@@ -62,7 +62,7 @@ transform: scale(1.05);
 		&:hover{
 		@include hover_shadow;
   	}
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
+	@media screen and (min-width: 665px) and (max-width: 1024px) {
 		font-size : 24px;
 	}
 	@media screen and (min-width: 1024px) {
@@ -77,7 +77,7 @@ hr {
 #content h2 {
 	margin-top : 25px;
 	font-size: 22px;
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
+	@media screen and (min-width: 665px) and (max-width: 1024px) {
 		font-size : 24px;
 	}
 	@media screen and (min-width: 1024px) {
@@ -97,7 +97,7 @@ hr {
 		& .label {
 		margin-left: 10px;
 		font-size: 16px;
-			@media screen and (min-width: 768px) and (max-width: 1023px) {
+			@media screen and (min-width: 665px) and (max-width: 1024px) {
 				font-size : 17px;
 			}
 			@media screen and (min-width: 1024px) {
@@ -113,7 +113,7 @@ hr {
 			background-color: rgb(230,239,239);
       	}
 		  font-size: 16px;
-			@media screen and (min-width: 768px) and (max-width: 1023px) {
+			@media screen and (min-width: 665px) and (max-width: 1024px) {
 				font-size : 17px;
 			}
 			@media screen and (min-width: 1024px) {
@@ -132,12 +132,11 @@ hr {
 	font-size: 16px;
 	width : 200px;
 	height : auto;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin: 0px 10px 0px 10px;
 		&:hover {
 		@include hover_shadow;
   		}
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
+	@media screen and (min-width: 665px) and (max-width: 1024px) {
 		font-size : 17px;
 	}
 	@media screen and (min-width: 1024px) {
@@ -152,62 +151,64 @@ hr {
 }
 .card {
 	background-color: $light_grey;
-	text-align : justify;
 }
 
 .container-card {
 	margin: 10px;
-  	width: 90%;
-	height:auto;
+	width: 100%;
   		&:hover {
 		@include hover_shadow;
   		}
-	    @media screen and (min-width: 768px) and (max-width: 1023px) {
+	    @media screen and (min-width: 665px) and (max-width: 1024px) {
 		width: 45%;
 		}
 		@media screen and (min-width: 1024px) {
 		width: 30%;
 		}
 			& .card-body {
-			min-height: 450px;
-	  		text-align: left;
+			padding: 2%;
+			min-height: 480px;
 			}
 			& .first {
-			height: 22%;
+			max-height: 24%;
 			}
 			& .second {
-			margin-top: 5px;
-			height: 35%;
+			min-height: 20%;
+			max-height: 39%;
 			}
 			& .third {
-			margin-top: 7px;
-			height: 35%;
-			@media screen and (min-width: 1024px) {
-			margin-top: 20px;
-			}
+			margin-top: 1%;
+			max-height: 36%;
 			}
 			& .card-title {	
-			width : 91%;
+			text-align: left;
+			width : 90%;
 			font-size: 1.2em;
 			font-style : bold;
 			}
 			& .card-author {
+			@include text_card;			
 			font-size: 1em;
 			font-style : bold;
 			}
 			& .card-id {
+			@include text_card;
 			font-style : italic;
 			}
+			& .card-text{
+			@include text_card;
+			}
 			& .card img {
-			width: 120px;
-			height: 160px;
+			width: 100%;
+			max-width: 125px;
+			height: auto;
 			}
 			& .icon {
 			position: absolute;
-			right: 10px;
-			top: 15px;
-			width: 40px;
-			height: 40px;
+			right: 7px;
+			top: 9px;
+			width: 30px;
+			height: 30px;
 			border : none;
 			background-color: $light_grey;
 			color: $blue_as_logo;
@@ -216,7 +217,7 @@ hr {
 				}
 			}
 			& .fas {
-			font-size: 32px;
+			font-size: 30px;
 			color: $blue_as_logo;
 			}
 	}

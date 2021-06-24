@@ -3,14 +3,9 @@
   font-family: "Vollkorn", serif;
   font-size: 16px;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   * {
     font-size: 17px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  * {
-    font-size: 18px;
   }
 }
 
@@ -23,7 +18,7 @@
   align-items: center;
   font-size: 34px;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   .title {
     font-size: 36px;
   }
@@ -44,7 +39,7 @@
   margin: 0px 0px 25px 0px;
   font-size: 22px;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   .h2 {
     font-size: 24px;
   }
@@ -67,7 +62,7 @@
   box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
   transform: scale(1.05);
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   .btnAdd {
     font-size: 24px;
   }
@@ -86,7 +81,7 @@ hr {
   margin-top: 25px;
   font-size: 22px;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   #content h2 {
     font-size: 24px;
   }
@@ -111,7 +106,7 @@ hr {
   margin-left: 10px;
   font-size: 16px;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   .formBlock .label {
     font-size: 17px;
   }
@@ -131,7 +126,7 @@ hr {
 .formBlock .field:focus {
   background-color: #e6efef;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   .formBlock .field {
     font-size: 17px;
   }
@@ -154,14 +149,13 @@ hr {
   font-size: 16px;
   width: 200px;
   height: auto;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0px 10px 0px 10px;
 }
 .btnForm:hover {
   box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
   transform: scale(1.05);
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   .btnForm {
     font-size: 17px;
   }
@@ -180,19 +174,17 @@ hr {
 
 .card {
   background-color: #fafafa;
-  text-align: justify;
 }
 
 .container-card {
   margin: 10px;
-  width: 90%;
-  height: auto;
+  width: 100%;
 }
 .container-card:hover {
   box-shadow: 0 0 0.5em rgba(23, 152, 155, 0.7);
   transform: scale(1.05);
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 665px) and (max-width: 1024px) {
   .container-card {
     width: 45%;
   }
@@ -203,47 +195,49 @@ hr {
   }
 }
 .container-card .card-body {
-  min-height: 450px;
-  text-align: left;
+  padding: 2%;
+  min-height: 480px;
 }
 .container-card .first {
-  height: 22%;
+  max-height: 24%;
 }
 .container-card .second {
-  margin-top: 5px;
-  height: 35%;
+  min-height: 20%;
+  max-height: 39%;
 }
 .container-card .third {
-  margin-top: 7px;
-  height: 35%;
-}
-@media screen and (min-width: 1024px) {
-  .container-card .third {
-    margin-top: 20px;
-  }
+  margin-top: 1%;
+  max-height: 36%;
 }
 .container-card .card-title {
-  width: 91%;
+  text-align: left;
+  width: 90%;
   font-size: 1.2em;
   font-style: bold;
 }
 .container-card .card-author {
+  text-align: justify;
   font-size: 1em;
   font-style: bold;
 }
 .container-card .card-id {
+  text-align: justify;
   font-style: italic;
 }
+.container-card .card-text {
+  text-align: justify;
+}
 .container-card .card img {
-  width: 120px;
-  height: 160px;
+  width: 100%;
+  max-width: 125px;
+  height: auto;
 }
 .container-card .icon {
   position: absolute;
-  right: 10px;
-  top: 15px;
-  width: 40px;
-  height: 40px;
+  right: 7px;
+  top: 9px;
+  width: 30px;
+  height: 30px;
   border: none;
   background-color: #fafafa;
   color: #17989b;
@@ -252,7 +246,7 @@ hr {
   transform: scale(1.5);
 }
 .container-card .fas {
-  font-size: 32px;
+  font-size: 30px;
   color: #17989b;
 }
 

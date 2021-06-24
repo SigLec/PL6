@@ -54,7 +54,6 @@ $searchForm.after(
 	"</div>");
 var $resultsTitle = $('#resultsTitle');
 // Add div for search results area
-
 $resultsTitle.after(
 	"<div class='container' id='resultsContainer'></div>");
 var $resultsContainer = $('#resultsContainer');
@@ -125,7 +124,7 @@ function displayResponseInCard(result) {
 	$resultsContainer.append(
 		'<div class="container-card">'+
   		'<div class="card h-100">' +
-  		'<div class="card-body text-left">' +
+  		'<div class="card-body">' +
 		'<div class="first">' +
 		'<h5 class="card-title" id="titleCard">Titre :&nbsp;' + book.title + '</h3>' +
     	'<h4 class="card-author" id="authorCard">'  + book.author + '</h4>' +
@@ -136,7 +135,7 @@ function displayResponseInCard(result) {
 		'</div>' +
 		'<button class="icon" id="bookmark" data-id= "' + book.id + '"><i class="fas fa-bookmark" title="Ajouter à la poch\'List"></i></button>' +   		
 		'<div class="third">' +
-		'<img src="' + book.imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
+		'<img src="' + book.imgBook + '"class="card-img-fluid img-thumbnail" alt="cover"/>' + 
 		'</div>' +
 		'</div>' +
 		'</div>' +
@@ -177,12 +176,18 @@ function displayResponseInCard(result) {
 		'<div class="container-card">'+
   		'<div class="card h-100">' +
   		'<div class="card-body">' +
+		  '<div class="first">'+
     		'<h5 class="card-title" id="titleCard">Titre :&nbsp;' + pochList[i].title + '</h3>' +
     		'<h4 class="card-author" id="authorCard">'  + pochList[i].author + '</h4>' +
-       	'<p class="card-id">Id :&nbsp;' + pochList[i].id  + '</p>' +
-       	'<p class="card-text">Description : &nbsp;' + pochList[i].description + "&nbsp;[...]" + '</p>' + 
-       	'<button class="icon" id="trash" data-trash= "' + pochList[i].id + '"><i class="fas fa-trash-alt" title="Supprimer de la poch\'List"></i></button>' +   		
-   		'<img src="' + pochList[i].imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
+       		'<p class="card-id">Id :&nbsp;' + pochList[i].id  + '</p>' +
+		  '</div>' +
+		  '<div class="second">' +
+		 	'<p class="card-text">Description : &nbsp;' + pochList[i].description + "&nbsp;[...]" + '</p>' + 
+		  '</div>' +
+		'<button class="icon" id="trash" data-trash= "' + pochList[i].id + '"><i class="fas fa-trash-alt" title="Supprimer de la poch\'List"></i></button>' +   		
+		  '<div class="third">' +
+			'<img src="' + pochList[i].imgBook + '"class="card-img-bottom img-fluid img-thumbnail" alt="cover"/>' + 
+		  '</div>' +
 		'</div>' +
 		'</div>' +
 		'</div>');
