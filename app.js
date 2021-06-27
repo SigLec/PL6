@@ -1,11 +1,9 @@
 $(document).ready(function(){
 
-var book, title, author, id, description, imgBook, bookId;
 var booksSortedById = new Set();
 var selectedBooks = new Set();
 var pochList = [];
 var $pochListContainer = $('#pochListContainer');
-
 
 // Add button "Ajouter un livre" 
 var addButton = $('.h2').after('<button class="btnAdd" id="addBook">Ajouter un livre</button>');
@@ -94,8 +92,6 @@ var apiUrl = "https://www.googleapis.com/books/v1/volumes?q="
 			}
 		});
 	}
-	$('#titleInput').val(""); // clean search input
-	$('#authorInput').val("");  // clean search input
 }
 
 //Fonction to display the results in index.html
@@ -158,7 +154,7 @@ function displayResponseInCard(result) {
 		} else {
 		selectedBooks.add(bookId);
 		pochList.push(book);
-		console.log('Votre livre a bien été ajouté à votre poch\'List!');
+		alert('Votre livre a bien été ajouté à votre poch\'List!');
 		sessionStorage.setItem('selectedBooks', JSON.stringify(pochList));
 		console.log(selectedBooks);
 		console.log(pochList);
